@@ -9,6 +9,9 @@ public class Main {
         System.out.println(checkForPalindrome("Racecar"));
         System.out.println(checkForPalindrome("hello"));
         System.out.println(checkForPalindrome("Was it a car or a cat I saw ?"));
+        System.out.println(convertDecimalToBinary(5));
+        System.out.println(convertDecimalToBinary(6));
+        System.out.println(convertDecimalToBinary(13));
 
     }
 
@@ -23,5 +26,14 @@ public class Main {
         return str.equals(reverseStr);
     }
 
-
+    public static String convertDecimalToBinary(Integer input) {
+        int remainder;
+        String binaryNum = "";
+        while (input > 0) {
+            remainder = input % 2;
+            binaryNum = remainder + binaryNum;
+            input = input / 2;
+        }
+        return binaryNum;
+    }
 }
